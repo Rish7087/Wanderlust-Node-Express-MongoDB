@@ -6,3 +6,13 @@ cd Hotel-Booking-System-MERN-
 
 # Install dependencies
 npm install
+
+# Technologies used
+
+Mongo DB
+Node js
+Express js
+Bootstrap
+Ejs
+
+# currently in development
