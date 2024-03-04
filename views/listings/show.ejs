@@ -6,6 +6,7 @@
   <div class="card col-6 offset-2 mt-3 show-card listing-card">
     <img src="<%= listing.image %>" class="card-img-top" alt="listing-image" />
     <div class="card-body">
+      <p class="card-text">Owned by <i><%= listing.owner.username %></i></p>
       <p class="card-text">
         &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
       </p>
@@ -13,6 +14,9 @@
       <p class="card-text"><%= listing.location %>, <%= listing.country %></p>
     </div>
   </div>
+
+  <!-- buttons -->
+  <% if(currUser && currUser._id.equals(listing.owner._id)) {%>
   <div class="btns mb-3 offset-1">
     <a
       href="/listings/<%= listing.id %>/edit"
@@ -24,8 +28,12 @@
       <button class="btn btn-dark offset-2">Delete</button>
     </form>
   </div>
-
+<% } %>
   <hr />
+
+
+  <!-- Review -->
+  <% if(currUser) { %>
 
   <div class="col-8 offset-3">
     <h4>Leave a review</h4>
@@ -62,13 +70,15 @@
     </form>
     <hr />
 
+    <% } %>
+
     <p><b>All Reviews</b></p>
     <div class="row">
       <% for(review of listing.reviews) { %>
 
       <div class="card col-5 mb-3 ms-3">
         <div class="card-body">
-          <h5 class="card-title">Rishabh</h5>
+          <h5 class="card-title"><%= review.author.username %></h5>
           <p class="card-text"><%= review.comment %></p>
           <p class="card-text"><%= review.rating %> Star</p>
         </div>
@@ -81,36 +91,3 @@
     </div>
   </div>
 </div>
-
-<% layout("/layouts/boilerplate.ejs") %>
-
-    <body>
-        <div class="row">
-            <div class="col-8 offset-2">
-                <h3>Listing Details</h3>
-            </div>
-            <div class="card col-6 offset-2 mt-3 show-card">
-                <img src="<%= listing.image %>" class="card-img-top" alt="listing-image" />
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <%= listing.title %>
-                    </h5>
-                    <p class="card-text">
-                        &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
-                    </p>
-                    <p class="card-text">
-                        <%= listing.description %>
-                    </p>
-                    <p class="card-text">
-                        <%= listing.location %>, <%= listing.country %>
-                    </p>
-                </div>
-            </div>
-            <div class="btns mb-3 offset-1">
-                <a href="/listings/<%= listing.id %>/edit" class="btn btn-dark add-btn col-1 offset-2">Edit</a>
-                <form method="POST" action="/listings/<%= listing.id %>?_method=DELETE">
-                    <button class="btn btn-dark offset-2">Delete</button>
-                </form>
-            </div>
-        </div>
-    </body>
