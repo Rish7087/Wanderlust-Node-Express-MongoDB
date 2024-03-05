@@ -6,7 +6,6 @@ const Listing = require("../models/listing.js");
 const {validateReview, isLoggedIn, isReviewAuthor} = require("../middleware.js");
 
 //Create review
-
 router.post(
   "/",
   validateReview, isLoggedIn,
@@ -28,7 +27,6 @@ router.post(
 );
 
 //delete review
-
 router.delete(
   "/:reviewId",isLoggedIn, isReviewAuthor,
   wrapAsync(async (req, res) => {
