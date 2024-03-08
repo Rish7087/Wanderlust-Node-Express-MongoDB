@@ -45,10 +45,10 @@ async function main() {
   await mongoose.connect(dbUrl);
 }
 
-//root route
-// app.get("/", (req, res) => {
-//   res.send("Connection established.");
-// });
+// root route
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
