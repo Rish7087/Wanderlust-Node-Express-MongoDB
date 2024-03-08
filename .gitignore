@@ -6,6 +6,3 @@ node_modules/
 
 # Ignore configuration files
 .env
-*.config
-*.conf
-*.ini
