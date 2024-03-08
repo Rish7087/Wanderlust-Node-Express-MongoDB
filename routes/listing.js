@@ -16,7 +16,6 @@ router.route("/")
   wrapAsync(listingController.createListing)
 );
 
-//new route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 router.route("/:id")
@@ -24,6 +23,8 @@ router.route("/:id")
 .put(
   isLoggedIn,
   isOwner,
+  upload.single("listing[image]"),
+  validateListing,
   wrapAsync(listingController.updateListing)
 )
 .delete(
@@ -32,7 +33,6 @@ router.route("/:id")
   wrapAsync(listingController.deleteListing)
 );
 
-//edit route
 router.get(
   "/:id/edit",
   isLoggedIn,
