@@ -55,9 +55,9 @@ const sessionOptions = {
 };
 
 //root route
-app.get("/", (req, res) => {
-  res.send("Connection established.");
-});
+// app.get("/", (req, res) => {
+//   res.send("Connection established.");
+// });
 
 app.use(session(sessionOptions));
 app.use(flash());
