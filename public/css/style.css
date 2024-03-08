@@ -181,10 +181,6 @@ body {
   border: none !important;
 }
 
-.btns {
-  display: flex;
-}
-
 .show-card {
   opacity: 1 !important;
 }
@@ -198,4 +194,11 @@ body {
 #map {
 height: 400px;
 width: 600px;
+}
+
+.mapping{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
