@@ -55,9 +55,10 @@ Wanderlust is a comprehensive full-stack web application developed using Node.js
 
 4. Run the application using `npm start`.
 
-Feel free to explore and contribute to the Wanderlust project. For any issues or suggestions, please open an [issue](#https://github.com/Rish7087/Hotel-Booking-System-MERN-/issues).
+For any issues or suggestions, please open an [issue](https://github.com/Rish7087/Hotel-Booking-System-MERN-/issues).
 
-Deployment
-The application is deployed and accessible at [Wanderlust](#https://wanderlust-nug7.onrender.com/listings). Visit the link to explore the features and functionalities.
+**Deployment:**
+The application is deployed and accessible at [Wanderlust](https://wanderlust-nug7.onrender.com/listings). Visit the link to explore the features and functionalities.
+
 
 **Happy exploring with Wanderlust!**
